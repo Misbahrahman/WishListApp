@@ -89,13 +89,6 @@ https://railway.app/project/826c45ef-b3de-46c7-92db-549b987f759d
 
 ### To run Test
 
-#### From CMD
-
-```
-mvn test
-
-```
-
 #### Manually
 
 ```
@@ -108,6 +101,13 @@ Or Click on Test Run Option
 
 ![Screenshot 2024-02-14 140530](https://github.com/Misbahrahman/WishListApp/assets/98620184/4d118b7c-9492-4126-b10b-b6399fb83a91)
 
+
+#### From CMD
+
+```
+mvn test
+
+```
 
 
 
