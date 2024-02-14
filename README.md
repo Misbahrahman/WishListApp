@@ -77,6 +77,11 @@ https://railway.app/project/826c45ef-b3de-46c7-92db-549b987f759d
 ```
 ![image](https://github.com/Misbahrahman/WishListApp/assets/98620184/01732515-3ba8-457f-93f6-d66b420ad181)
 
+###Schema
+
+![Screenshot 2024-02-14 094936](https://github.com/Misbahrahman/WishListApp/assets/98620184/8babceb4-32e0-48b0-a972-a5946476e61a)
+
+
 ---
 ## Unit Testing
 
