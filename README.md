@@ -3,7 +3,7 @@
 
 ## Getting Started
 ### -> Clone repo in local
-### -> Run
+### -> Run in Editor
 ### -> NO Database installation needed (Mysql database is hosted)
 
 ### Use Postman(Preferred)
