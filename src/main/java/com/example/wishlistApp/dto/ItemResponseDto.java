@@ -1,12 +1,12 @@
 package com.example.wishlistApp.dto;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Data
+@Getter
+@Setter
 @Builder
 public class ItemResponseDto {
     int id;

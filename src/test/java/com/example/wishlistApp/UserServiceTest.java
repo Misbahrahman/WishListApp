@@ -4,6 +4,7 @@ import com.example.wishlistApp.dto.UserDto;
 import com.example.wishlistApp.exception.CustomException;
 import com.example.wishlistApp.model.User;
 import com.example.wishlistApp.repository.UserRepo;
+import com.example.wishlistApp.transformer.UserTranformer;
 import com.example.wishlistApp.service.UserService;
 import com.example.wishlistApp.transformer.UserTranformer;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,19 +31,30 @@ public class UserServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-//    @Test
-//    public void testRegisterUser() {
-//        // Creating a mock UserDto
-//        UserDto userDto = UserDto.builder().username("testuser").password("testpassword").build();
-//
-//        // Calling the method to be tested
-//        UserDto result = userService.registerUser(userDto);
-//
-//        // Verifying the result
-//        assertNotNull(result);
-//        assertEquals(userDto.getUsername(), result.getUsername());
-//        assertEquals(userDto.getPassword(), result.getPassword());
-//    }
+    @Test
+    public void testRegisterUser() {
+        // Creating a mock UserDto
+        UserDto userDto = UserDto.builder().username("testuser").password("testpassword").build();
+
+        // Creating a mock User entity to be saved
+        User userToSave = UserTranformer.transformUserDtoToUser(userDto);
+
+        // Mocking the behavior of userRepo.save method
+        when(userRepo.save(any(User.class))).thenReturn(userToSave);
+
+        // Calling the method to be tested
+        UserDto result = userService.registerUser(userDto);
+
+        // Verifying that the save method was called with the correct parameters
+        verify(userRepo, times(1)).save(any(User.class));
+
+        // Asserting that the result is not null
+        assertNotNull(result);
+
+        // Asserting that the result is equal to the input userDto
+        assertEquals(userDto.getUsername(), result.getUsername());
+    }
+
 
 
 

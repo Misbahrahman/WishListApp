@@ -52,12 +52,39 @@ public class ItemService {
 
     // Method to add an item
     public ItemResponseDto addItem(ItemDto itemDto) {
-        String loggedInUser = getCurrentlyLoggedInUser();
         Item item = ItemTransformer.itemDtoToItem(itemDto);
-        item.setUser(userRepo.findById(loggedInUser).get());
+        //Adding user manually from loggedIn instance
+        String loggedInUser = getCurrentlyLoggedInUser();
+        User user = userRepo.findById(loggedInUser).get();
+        //FOR EASY TESTING
+        return addItemMappingUser(item , user);
+    }
+
+    public ItemResponseDto addItemMappingUser(Item item, User user) {
+        item.setUser(user);
         Item savedItem = itemRepo.save(item);
         return ItemTransformer.itemToitemResponseDto(savedItem);
     }
+
+
+
+    //Just For Testing
+    public ItemResponseDto addItemTest(ItemDto itemDto , String loggedInUser) {
+
+        Item item = ItemTransformer.itemDtoToItem(itemDto);
+
+        //Adding user manually from loggedIn instance
+        item.setUser(userRepo.findById(loggedInUser).get());
+        try {
+            Item savedItem = itemRepo.save(item);
+            return ItemTransformer.itemToitemResponseDto(savedItem);
+        }catch (Exception e){
+            throw new CustomException(e.getMessage());
+        }
+
+    }
+
+
 
     // Method to delete an item by its ID
     public String deleteItem(int id) {
