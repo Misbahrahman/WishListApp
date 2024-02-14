@@ -11,7 +11,7 @@
 ---
 ### 1. REGISTER USER (POST-METHOD)
 
- The userName and password would be used ahead , decide wisely
+#### This userName and password would be used ahead
 
 
 ```
