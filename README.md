@@ -76,6 +76,10 @@ localHost:8080/item/deleteItem
 https://railway.app/project/826c45ef-b3de-46c7-92db-549b987f759d
 ```
 ![image](https://github.com/Misbahrahman/WishListApp/assets/98620184/01732515-3ba8-457f-93f6-d66b420ad181)
+![image](https://github.com/Misbahrahman/WishListApp/assets/98620184/3233cb41-bfa5-40b8-9705-c8921b39a3ae)
+![image](https://github.com/Misbahrahman/WishListApp/assets/98620184/49ae611b-6b29-4fd1-b5ac-1a62dcefa42c)
+
+
 
 ###Schema
 
